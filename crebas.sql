@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2005                    */
-/* Created on:     5/20/2023 4:09:30 PM                         */
+/* Created on:     5/20/2023 11:07:10 PM                        */
 /*==============================================================*/
 
 
@@ -345,10 +345,10 @@ go
 /* Table: CLASS                                                 */
 /*==============================================================*/
 create table CLASS (
+   TRIPID               int                  null,
    TRIPNUMBER           int                  null,
    SEATNUMBER           int                  null,
    CLASSN               varchar(30)          null,
-   TRIPID               int                  null,
    TRIPNUM              int                  null,
    CLASSNAME            varchar(30)          null,
    PRICE                decimal              null
@@ -445,9 +445,10 @@ create table TRIP (
    TRIPID               int                  not null,
    DEPARTDATE           datetime             not null,
    RETURNDATE           datetime             not null,
-   ARRIVALTIME          datetime             not null,
+   TIME                 datetime             not null,
    SOURCE               varchar(40)          null,
    DESTINATION          decimal              null,
+   AVAILABLESEAT        int                  null,
    constraint PK_TRIP primary key nonclustered (TRIPID)
 )
 go
