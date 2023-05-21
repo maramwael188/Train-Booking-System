@@ -35,7 +35,6 @@ namespace TrainBookingSystemC
 
         private void button2_Click(object sender, EventArgs e)
         {
-            tbID.Clear();
             tbFname.Clear();
             tbLname.Clear();
             tbEmail.Clear();
@@ -43,7 +42,7 @@ namespace TrainBookingSystemC
             tbPhoneNumber.Clear();
             tbPass.Clear();
             tbGender.ResetText();
-            tbID.Focus();
+            tbFname.Focus();
         }
 
         private void id_Click(object sender, EventArgs e)
@@ -118,7 +117,6 @@ namespace TrainBookingSystemC
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string id = tbID.Text;
             string firstName = tbFname.Text;
             string lastName = tbLname.Text;
             string email = tbEmail.Text;
@@ -128,17 +126,42 @@ namespace TrainBookingSystemC
             string gender = tbGender.Text;
 
             try
-            {                                                   
+            {
                 using (SqlConnection conn = new SqlConnection(@"Data Source=MEDO;Initial Catalog=TrainBooking;Integrated Security=True"))
                 {
                     conn.Open();
 
+                    // Check if email already exists in the PASSENGER or ADMIN table
+                    string checkQuery = "SELECT COUNT(*) FROM PASSENGER WHERE EMAIL = @Email";
+                    using (SqlCommand checkCommand = new SqlCommand(checkQuery, conn))
+                    {
+                        checkCommand.Parameters.AddWithValue("@Email", email);
+                        int count = (int)checkCommand.ExecuteScalar();
+
+                        if (count > 0)
+                        {
+                            MessageBox.Show("Email already exists. Please use a different email.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+
+                    checkQuery = "SELECT COUNT(*) FROM ADMIN WHERE EMAIL = @Email";
+                    using (SqlCommand checkCommand = new SqlCommand(checkQuery, conn))
+                    {
+                        checkCommand.Parameters.AddWithValue("@Email", email);
+                        int count = (int)checkCommand.ExecuteScalar();
+
+                        if (count > 0)
+                        {
+                            MessageBox.Show("Email already exists. Please use a different email.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
 
                     string query = "INSERT INTO PASSENGER (FIRSTNAME, LASTNAME, EMAIL, ARIACODE, NUMBER, PASSWORD, GENDER) " +
                                    "VALUES (@FirstName, @LastName, @Email, @AreaCode, @PhoneNumber, @Password, @Gender)";
                     using (SqlCommand command = new SqlCommand(query, conn))
                     {
-                        command.Parameters.AddWithValue("@ID", id);
                         command.Parameters.AddWithValue("@FirstName", firstName);
                         command.Parameters.AddWithValue("@LastName", lastName);
                         command.Parameters.AddWithValue("@Email", email);
@@ -153,7 +176,6 @@ namespace TrainBookingSystemC
 
                 MessageBox.Show("Passenger registration successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                tbID.Clear();
                 tbFname.Clear();
                 tbLname.Clear();
                 tbEmail.Clear();
@@ -161,7 +183,7 @@ namespace TrainBookingSystemC
                 tbPhoneNumber.Clear();
                 tbPass.Clear();
                 tbGender.ResetText();
-                tbID.Focus();
+                tbFname.Focus();
             }
             catch (Exception ex)
             {
@@ -193,55 +215,78 @@ namespace TrainBookingSystemC
 
         private void button5_Click(object sender, EventArgs e)
         {
-            string id = tbID.Text;
             string firstName = tbFname.Text;
-            string lastName = tbLname.Text;
-            string email = tbEmail.Text;
-            string areaCode = tbAreaCode.Text;
-            string phoneNumber = tbPhoneNumber.Text;
-            string password = tbPass.Text;
-            string gender = tbGender.Text;
+    string lastName = tbLname.Text;
+    string email = tbEmail.Text;
+    string areaCode = tbAreaCode.Text;
+    string phoneNumber = tbPhoneNumber.Text;
+    string password = tbPass.Text;
+    string gender = tbGender.Text;
 
-            try
+    try
+    {
+        using (SqlConnection conn = new SqlConnection(@"Data Source=MEDO;Initial Catalog=TrainBooking;Integrated Security=True"))
+        {
+            conn.Open();
+
+            // Check if email already exists in the ADMIN or PASSENGER table
+            string checkQuery = "SELECT COUNT(*) FROM ADMIN WHERE EMAIL = @Email";
+            using (SqlCommand checkCommand = new SqlCommand(checkQuery, conn))
             {
-                using (SqlConnection conn = new SqlConnection(@"Data Source=MEDO;Initial Catalog=TrainBooking;Integrated Security=True"))
+                checkCommand.Parameters.AddWithValue("@Email", email);
+                int count = (int)checkCommand.ExecuteScalar();
+
+                if (count > 0)
                 {
-                    conn.Open();
-
-                    string query = "INSERT INTO ADMIN (FIRSTNAME, LASTNAME, EMAIL, AREACODE, NUMBER, PASSWORD, GENDER) " +
-                                   "VALUES (@FirstName, @LastName, @Email, @AreaCode, @PhoneNumber, @Password, @Gender)";
-                    using (SqlCommand command = new SqlCommand(query, conn))
-                    {
-                        command.Parameters.AddWithValue("@ID", id);
-                        command.Parameters.AddWithValue("@FirstName", firstName);
-                        command.Parameters.AddWithValue("@LastName", lastName);
-                        command.Parameters.AddWithValue("@Email", email);
-                        command.Parameters.AddWithValue("@AreaCode", areaCode);
-                        command.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
-                        command.Parameters.AddWithValue("@Password", password);
-                        command.Parameters.AddWithValue("@Gender", gender);
-
-                        command.ExecuteNonQuery();
-                    }
+                    MessageBox.Show("Email already exists. Please use a different email.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return; // Exit the event handler without performing the registration
                 }
-
-                MessageBox.Show("Admin registration successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                tbID.Clear();
-                tbFname.Clear();
-                tbLname.Clear();
-                tbEmail.Clear();
-                tbAreaCode.Clear();
-                tbPhoneNumber.Clear();
-                tbPass.Clear();
-                tbGender.ResetText();
-                tbID.Focus();
             }
-            catch (Exception ex)
+
+            checkQuery = "SELECT COUNT(*) FROM PASSENGER WHERE EMAIL = @Email";
+            using (SqlCommand checkCommand = new SqlCommand(checkQuery, conn))
             {
-                MessageBox.Show("ERROR: " + ex.Message);
+                checkCommand.Parameters.AddWithValue("@Email", email);
+                int count = (int)checkCommand.ExecuteScalar();
+
+                if (count > 0)
+                {
+                    MessageBox.Show("Email already exists. Please use a different email.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return; // Exit the event handler without performing the registration
+                }
+            }
+
+            string query = "INSERT INTO ADMIN (FIRSTNAME, LASTNAME, EMAIL, AREACODE, NUMBER, PASSWORD, GENDER) " +
+                           "VALUES (@FirstName, @LastName, @Email, @AreaCode, @PhoneNumber, @Password, @Gender)";
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                command.Parameters.AddWithValue("@FirstName", firstName);
+                command.Parameters.AddWithValue("@LastName", lastName);
+                command.Parameters.AddWithValue("@Email", email);
+                command.Parameters.AddWithValue("@AreaCode", areaCode);
+                command.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
+                command.Parameters.AddWithValue("@Password", password);
+                command.Parameters.AddWithValue("@Gender", gender);
+
+                command.ExecuteNonQuery();
             }
         }
+
+        MessageBox.Show("Admin registration successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        tbFname.Clear();
+        tbLname.Clear();
+        tbEmail.Clear();
+        tbAreaCode.Clear();
+        tbPhoneNumber.Clear();
+        tbPass.Clear();
+        tbGender.ResetText();
+        tbFname.Focus();
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show("ERROR: " + ex.Message);
+    }
+}
 
         private void button4_Click_1(object sender, EventArgs e)
         {
