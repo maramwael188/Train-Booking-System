@@ -1,8 +1,9 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2005                    */
-/* Created on:     5/20/2023 11:07:10 PM                        */
+/* Created on:     5/21/2023 4:18:38 PM                         */
 /*==============================================================*/
-use DBP
+
+
 if exists (select 1
    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
    where r.fkeyid = object_id('ADMIN') and o.name = 'FK_ADMIN_ADD_TRAIN')
@@ -259,8 +260,9 @@ create table ADMIN (
    EMAIL                varchar(30)          not null,
    PASSWORD             varchar(20)          not null,
    WORKHRS              int                  null,
-   AREACODE             numeric              not null,
+   AREACODE             varchar(10)          not null,
    NUMBER               varchar(30)          not null,
+   GENDER               char(10)             not null,
    constraint PK_ADMIN primary key nonclustered (ADMINID)
 )
 go
@@ -309,7 +311,7 @@ go
 /* Table: BOOKING                                               */
 /*==============================================================*/
 create table BOOKING (
-   BOOKINGNUMBER        int                 identity(1000,1) not null,
+   BOOKINGNUMBER        int                   identity(1000,1)  not null,
    TRIPID               int                  null,
    TRIPNUMBER           int                  null,
    SEATNUMBER           int                  null,
@@ -348,9 +350,9 @@ create table CLASS (
    TRIPNUMBER           int                  null,
    SEATNUMBER           int                  null,
    CLASSN               varchar(30)          null,
-   TRIPNUM              int                  null,
-   CLASSNAME            varchar(30)          null,
-   PRICE                decimal              null
+   TRIPNUM              int                  not null,
+   CLASSNAME            varchar(30)          not null,
+   PRICE                decimal              not null
 )
 go
 
@@ -376,27 +378,20 @@ go
 /* Table: PASSENGER                                             */
 /*==============================================================*/
 create table PASSENGER (
-   PASSENGERID          int                 identity(100,1) not null,
+   PASSENGERID          int                 identity(100,1)  not null,
    BOOKINGNUMBER        int                  null,
    BOO_BOOKINGNUMBER    int                  null,
    FIRSTNAME            varchar(30)          not null,
    LASTNAME             varchar(20)          not null,
    EMAIL                varchar(30)          not null,
-   ARIACODE             numeric              not null,
+   ARIACODE             varchar(10)          not null,
    NUMBER               varchar(30)          not null,
    PASSWORD             varchar(20)          not null,
    GENDER               char(10)             not null,
    constraint PK_PASSENGER primary key nonclustered (PASSENGERID)
 )
 go
-alter table PASSENGER
-alter column ARIACODE char(5)
-///*INSERT INTO PASSENGER (FIRSTNAME, LASTNAME , EMAIL ,ARIACODE, NUMBER, PASSWORD,GENDER)
-VALUES ('linda', 'Tom B. Erichsen', 'Skagen12@gmail.com', 02, '0154555656', 'Norway', 'female');
-INSERT INTO PASSENGER (FIRSTNAME, LASTNAME , EMAIL ,ARIACODE, NUMBER, PASSWORD,GENDER)
-VALUES ('mary', 'Tom B. Erichsen', 'Skagen12@gmail.com', 02, '0154555656', 'Norway', 'female');
-delete from PASSENGER
-select * from PASSENGER*///
+
 /*==============================================================*/
 /* Index: BOOK_FK                                               */
 /*==============================================================*/
@@ -418,7 +413,7 @@ go
 /*==============================================================*/
 create table SEAT (
    TRIPNUMBER           int                  not null,
-   SEATNUMBER           int                  identity(1,1) not null,
+   SEATNUMBER           int                  not null,
    CLASSN               varchar(30)          not null,
    constraint PK_SEAT primary key nonclustered (TRIPNUMBER, SEATNUMBER, CLASSN)
 )
@@ -428,7 +423,7 @@ go
 /* Table: TRAIN                                                 */
 /*==============================================================*/
 create table TRAIN (
-   TRAINANUM            int                  identity(10000,1) not null,
+   TRAINANUM            int                  identity(10000,1)  not null,
    TRIPID               int                  null,
    MODELTRAIN           varchar(20)          not null,
    TRAINNAME            varchar(30)          not null,
@@ -448,13 +443,14 @@ go
 /* Table: TRIP                                                  */
 /*==============================================================*/
 create table TRIP (
-   TRIPID               int                  identity(1,1) not null,
+   TRIPID               int                 identity(1,1)  not null,
    DEPARTDATE           datetime             not null,
    RETURNDATE           datetime             not null,
-   TIME                 datetime             not null,
-   SOURCE               varchar(40)          null,
-   DESTINATION          decimal              null,
-   AVAILABLESEAT        int                  null,
+   RETURN_TIME          datetime             not null,
+   SOURCE               varchar(40)          not null,
+   DESTINATION          decimal              not null,
+   AVAILABLESEAT        int                  not null,
+   ARRIVALTIME          datetime             not null,
    constraint PK_TRIP primary key nonclustered (TRIPID)
 )
 go
