@@ -1,2 +1,0 @@
-D:\fcai\Second Year\second semister\Database\DBprojects\Train\Train\Train\x64\Debug\Train.vcxproj.AssemblyReference.cache
-D:\fcai\Second Year\second semister\Database\DBprojects\Train\Train\Train\x64\Debug\Train.vcxproj.SuggestedBindingRedirects.cache
