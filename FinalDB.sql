@@ -454,6 +454,16 @@ create table TRIP (
    constraint PK_TRIP primary key nonclustered (TRIPID)
 )
 go
+alter table TRIP
+alter column DEPARTDATE varchar(20)
+alter table TRIP
+alter column RETURNDATE varchar(20)
+alter table TRIP
+alter column RETURN_TIME varchar(20)
+alter table TRIP
+alter column DESTINATION varchar(20)
+alter table TRIP
+alter column ARRIVALTIME varchar(20)
 
 alter table ADMIN
    add constraint FK_ADMIN_ADD_TRAIN foreign key (TRAINANUM)
