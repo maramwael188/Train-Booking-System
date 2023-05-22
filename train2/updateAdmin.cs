@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TrainBookingSystemC;
+using train2;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace train2
@@ -62,7 +62,7 @@ namespace train2
             Form1 form = new Form1();
             try
             {
-                using (SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-KRRE5CF7\SQLEXPRESS;Initial Catalog=db;Integrated Security=True"))
+                using (SqlConnection conn = new SqlConnection(@"Data Source=MEDO;Initial Catalog=TrainBooking;Integrated Security=True"))
                 {
                     conn.Open();
                     string updateQuery = "UPDATE ADMIN SET FIRSTNAME = @FirstName, LASTNAME=@LastName," +
@@ -142,7 +142,7 @@ namespace train2
             Form1 form = new Form1();
             try
             {
-                using (SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-KRRE5CF7\SQLEXPRESS;Initial Catalog=db;Integrated Security=True"))
+                using (SqlConnection conn = new SqlConnection(@"Data Source=MEDO;Initial Catalog=TrainBooking;Integrated Security=True"))
                 {
                     conn.Open();
                     string deletequery = "DELETE FROM ADMIN WHERE EMAIL=@Email";

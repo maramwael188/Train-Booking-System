@@ -44,7 +44,7 @@ namespace train2
             Form1 form = new Form1();
             try
             {
-                using (SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-KRRE5CF7\SQLEXPRESS;Initial Catalog=db;Integrated Security=True"))
+                using (SqlConnection conn = new SqlConnection(@"Data Source=MEDO;Initial Catalog=TrainBooking;Integrated Security=True"))
                 {
                     conn.Open();
                     string deletequery = "DELETE FROM PASSENGER WHERE EMAIL=@Email";
@@ -87,7 +87,7 @@ namespace train2
             Form1 form = new Form1();
             try
             {
-                using (SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-KRRE5CF7\SQLEXPRESS;Initial Catalog=db;Integrated Security=True"))
+                using (SqlConnection conn = new SqlConnection(@"Data Source=MEDO;Initial Catalog=TrainBooking;Integrated Security=True"))
                 {
                     conn.Open();
                     string updateQuery = "UPDATE PASSENGER SET FIRSTNAME = @FirstName, LASTNAME=@LastName," +

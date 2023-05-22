@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TrainBookingSystemC;
+using train2;
 
 namespace train2
 {
@@ -19,7 +19,7 @@ namespace train2
         public Form1()
         {
             InitializeComponent();
-            conn = new SqlConnection(@"Data Source=LAPTOP-KRRE5CF7\SQLEXPRESS;Initial Catalog=db;Integrated Security=True");
+            conn = new SqlConnection(@"Data Source=MEDO;Initial Catalog=TrainBooking;Integrated Security=True");
         }
 
         //private void reg_btn_Click(object sender, EventArgs e)
