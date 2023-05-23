@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace train2
 {
@@ -15,7 +16,7 @@ namespace train2
     {
         public string currentEmail { get; set; }
         public string currentPassw { get; set; }
-
+        
         public updatePassenger()
         {
             InitializeComponent();
@@ -44,7 +45,7 @@ namespace train2
             Form1 form = new Form1();
             try
             {
-                using (SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=db;Integrated Security=True"))
+                using (SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-KRRE5CF7\SQLEXPRESS;Initial Catalog=db;Integrated Security=True"))
                 {
                     conn.Open();
                     string deletequery = "DELETE FROM PASSENGER WHERE EMAIL=@Email";
@@ -87,11 +88,11 @@ namespace train2
             Form1 form = new Form1();
             try
             {
-                using (SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=db;Integrated Security=True"))
+                using (SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-KRRE5CF7\SQLEXPRESS;Initial Catalog=db;Integrated Security=True"))
                 {
                     conn.Open();
                     string updateQuery = "UPDATE PASSENGER SET FIRSTNAME = @FirstName, LASTNAME=@LastName," +
-                        " EMAIL=@Email, PASSWORD=@Password, AREACODE=@AreaCode, NUMBER=@PhoneNumber, " +
+                        " EMAIL=@Email, PASSWORD=@Password, ARIACODE=@AreaCode, NUMBER=@PhoneNumber, " +
                         "GENDER= @Gender Where EMAIL=@CurrentEmaill";
                     using (SqlCommand updateCommand = new SqlCommand(updateQuery, conn))
                     {
@@ -104,6 +105,7 @@ namespace train2
                         updateCommand.Parameters.AddWithValue("@Gender", gender);
                         updateCommand.Parameters.AddWithValue("@CurrentEmaill", currentEmaill);
                         int rowsAffected = updateCommand.ExecuteNonQuery();
+                        this.pASSENGERTableAdapter.Fill(this.dbDataSet.PASSENGER);
                         // Check the number of rows affected
                         if (rowsAffected > 0)
                         {
@@ -120,6 +122,40 @@ namespace train2
             {
                 MessageBox.Show("ERROR: " + ex.Message);
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //string currentEmaill = currentEmail;
+            //string sqlQuery = "SELECT FIRSTNAME, LASTNAME, EMAIL, ARIACODE, NUMBER, PASSWORD, GENDER FROM PASSENGER WHERE EMAIL = @Email";
+
+            //using (SqlConnection connection = new SqlConnection(@"Data Source=LAPTOP-KRRE5CF7\SQLEXPRESS;Initial Catalog=db;Integrated Security=True"))
+            //{
+            //    connection.Open();
+
+            //    using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+            //    {
+            //        command.Parameters.AddWithValue("@Email", currentEmaill);
+            //        command.ExecuteNonQuery();
+            //    }
+
+            //    connection.Close();
+            //}
+
+        }
+
+        private void updatePassenger_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dbDataSet.PASSENGER' table. You can move, or remove it, as needed.
+            this.pASSENGERTableAdapter.Fill(this.dbDataSet.PASSENGER);
+
+
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            
+
         }
     }
 }

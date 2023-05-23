@@ -132,7 +132,7 @@ namespace TrainBookingSystemC
 
             try
             {
-                using (SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=db;Integrated Security=True"))
+                using (SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-KRRE5CF7\SQLEXPRESS;Initial Catalog=db;Integrated Security=True"))
                 {
                     conn.Open();
 
@@ -226,7 +226,7 @@ namespace TrainBookingSystemC
 
             try
             {
-                using (SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=db;Integrated Security=True"))
+                using (SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-KRRE5CF7\SQLEXPRESS;Initial Catalog=db;Integrated Security=True"))
                 {
                     conn.Open();
 

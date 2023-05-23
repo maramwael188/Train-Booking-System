@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnBooking = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pASSENGERBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbDataSet = new train2.dbDataSet();
             this.tbPass = new System.Windows.Forms.TextBox();
             this.tbAreaCode = new System.Windows.Forms.TextBox();
             this.tbPhoneNumber = new System.Windows.Forms.TextBox();
@@ -49,9 +51,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.pASSENGERTableAdapter = new train2.dbDataSetTableAdapters.PASSENGERTableAdapter();
+            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
+            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pASSENGERBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
+            this.fillByToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -64,32 +71,6 @@
             this.panel1.Size = new System.Drawing.Size(218, 641);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Controls.Add(this.tbPass);
-            this.panel2.Controls.Add(this.tbAreaCode);
-            this.panel2.Controls.Add(this.tbPhoneNumber);
-            this.panel2.Controls.Add(this.tbEmail);
-            this.panel2.Controls.Add(this.tbLname);
-            this.panel2.Controls.Add(this.tbFname);
-            this.panel2.Controls.Add(this.tbGender);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.btnSave);
-            this.panel2.Controls.Add(this.btnExit);
-            this.panel2.Location = new System.Drawing.Point(217, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(855, 641);
-            this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // btnLogOut
             // 
@@ -117,15 +98,40 @@
             this.btnBooking.UseVisualStyleBackColor = true;
             this.btnBooking.Click += new System.EventHandler(this.btnBooking_Click);
             // 
-            // dataGridView1
+            // panel2
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(163, 398);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(499, 187);
-            this.dataGridView1.TabIndex = 63;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.tbPass);
+            this.panel2.Controls.Add(this.tbAreaCode);
+            this.panel2.Controls.Add(this.tbPhoneNumber);
+            this.panel2.Controls.Add(this.tbEmail);
+            this.panel2.Controls.Add(this.tbLname);
+            this.panel2.Controls.Add(this.tbFname);
+            this.panel2.Controls.Add(this.tbGender);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.btnSave);
+            this.panel2.Controls.Add(this.btnExit);
+            this.panel2.Location = new System.Drawing.Point(217, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(855, 641);
+            this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // pASSENGERBindingSource
+            // 
+            this.pASSENGERBindingSource.DataMember = "PASSENGER";
+            this.pASSENGERBindingSource.DataSource = this.dbDataSet;
+            // 
+            // dbDataSet
+            // 
+            this.dbDataSet.DataSetName = "dbDataSet";
+            this.dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tbPass
             // 
@@ -316,23 +322,52 @@
             this.btnExit.Text = "EXIT";
             this.btnExit.UseVisualStyleBackColor = true;
             // 
+            // pASSENGERTableAdapter
+            // 
+            this.pASSENGERTableAdapter.ClearBeforeFill = true;
+            // 
+            // fillByToolStrip
+            // 
+            this.fillByToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fillByToolStripButton});
+            this.fillByToolStrip.Location = new System.Drawing.Point(218, 0);
+            this.fillByToolStrip.Name = "fillByToolStrip";
+            this.fillByToolStrip.Size = new System.Drawing.Size(854, 27);
+            this.fillByToolStrip.TabIndex = 2;
+            this.fillByToolStrip.Text = "fillByToolStrip";
+            // 
+            // fillByToolStripButton
+            // 
+            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByToolStripButton.Name = "fillByToolStripButton";
+            this.fillByToolStripButton.Size = new System.Drawing.Size(48, 24);
+            this.fillByToolStripButton.Text = "FillBy";
+            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
+            // 
             // updatePassenger
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::train2.Properties.Resources.tt;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1070, 641);
+            this.ClientSize = new System.Drawing.Size(1072, 641);
+            this.Controls.Add(this.fillByToolStrip);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "updatePassenger";
             this.Text = "updatePassenger";
+            this.Load += new System.EventHandler(this.updatePassenger_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pASSENGERBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).EndInit();
+            this.fillByToolStrip.ResumeLayout(false);
+            this.fillByToolStrip.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -342,7 +377,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnBooking;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox tbPass;
         private System.Windows.Forms.TextBox tbAreaCode;
         private System.Windows.Forms.TextBox tbPhoneNumber;
@@ -359,5 +393,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnExit;
+        private dbDataSet dbDataSet;
+        private System.Windows.Forms.BindingSource pASSENGERBindingSource;
+        private dbDataSetTableAdapters.PASSENGERTableAdapter pASSENGERTableAdapter;
+        private System.Windows.Forms.ToolStrip fillByToolStrip;
+        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
     }
 }

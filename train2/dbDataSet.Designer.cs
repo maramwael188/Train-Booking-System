@@ -2935,7 +2935,7 @@ namespace train2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TRIPRow AddTRIPRow(string DEPARTDATE, string RETURNDATE, string RETURN_TIME, string SOURCE, string DESTINATION, int AVAILABLESEAT, string ARRIVALTIME) {
+            public TRIPRow AddTRIPRow(System.DateTime DEPARTDATE, System.DateTime RETURNDATE, System.DateTime RETURN_TIME, string SOURCE, decimal DESTINATION, int AVAILABLESEAT, System.DateTime ARRIVALTIME) {
                 TRIPRow rowTRIPRow = ((TRIPRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2990,19 +2990,19 @@ namespace train2 {
             private void InitClass() {
                 this.columnTRIPID = new global::System.Data.DataColumn("TRIPID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTRIPID);
-                this.columnDEPARTDATE = new global::System.Data.DataColumn("DEPARTDATE", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnDEPARTDATE = new global::System.Data.DataColumn("DEPARTDATE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDEPARTDATE);
-                this.columnRETURNDATE = new global::System.Data.DataColumn("RETURNDATE", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnRETURNDATE = new global::System.Data.DataColumn("RETURNDATE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRETURNDATE);
-                this.columnRETURN_TIME = new global::System.Data.DataColumn("RETURN_TIME", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnRETURN_TIME = new global::System.Data.DataColumn("RETURN_TIME", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRETURN_TIME);
                 this.columnSOURCE = new global::System.Data.DataColumn("SOURCE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSOURCE);
-                this.columnDESTINATION = new global::System.Data.DataColumn("DESTINATION", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnDESTINATION = new global::System.Data.DataColumn("DESTINATION", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDESTINATION);
                 this.columnAVAILABLESEAT = new global::System.Data.DataColumn("AVAILABLESEAT", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAVAILABLESEAT);
-                this.columnARRIVALTIME = new global::System.Data.DataColumn("ARRIVALTIME", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnARRIVALTIME = new global::System.Data.DataColumn("ARRIVALTIME", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnARRIVALTIME);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnTRIPID}, true));
@@ -3012,14 +3012,14 @@ namespace train2 {
                 this.columnTRIPID.AllowDBNull = false;
                 this.columnTRIPID.ReadOnly = true;
                 this.columnTRIPID.Unique = true;
-                this.columnDEPARTDATE.MaxLength = 20;
-                this.columnRETURNDATE.MaxLength = 20;
-                this.columnRETURN_TIME.MaxLength = 20;
+                this.columnDEPARTDATE.AllowDBNull = false;
+                this.columnRETURNDATE.AllowDBNull = false;
+                this.columnRETURN_TIME.AllowDBNull = false;
                 this.columnSOURCE.AllowDBNull = false;
                 this.columnSOURCE.MaxLength = 40;
-                this.columnDESTINATION.MaxLength = 20;
+                this.columnDESTINATION.AllowDBNull = false;
                 this.columnAVAILABLESEAT.AllowDBNull = false;
-                this.columnARRIVALTIME.MaxLength = 20;
+                this.columnARRIVALTIME.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4295,14 +4295,9 @@ namespace train2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string DEPARTDATE {
+            public System.DateTime DEPARTDATE {
                 get {
-                    try {
-                        return ((string)(this[this.tableTRIP.DEPARTDATEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DEPARTDATE\' in table \'TRIP\' is DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tableTRIP.DEPARTDATEColumn]));
                 }
                 set {
                     this[this.tableTRIP.DEPARTDATEColumn] = value;
@@ -4311,14 +4306,9 @@ namespace train2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string RETURNDATE {
+            public System.DateTime RETURNDATE {
                 get {
-                    try {
-                        return ((string)(this[this.tableTRIP.RETURNDATEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'RETURNDATE\' in table \'TRIP\' is DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tableTRIP.RETURNDATEColumn]));
                 }
                 set {
                     this[this.tableTRIP.RETURNDATEColumn] = value;
@@ -4327,14 +4317,9 @@ namespace train2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string RETURN_TIME {
+            public System.DateTime RETURN_TIME {
                 get {
-                    try {
-                        return ((string)(this[this.tableTRIP.RETURN_TIMEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'RETURN_TIME\' in table \'TRIP\' is DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tableTRIP.RETURN_TIMEColumn]));
                 }
                 set {
                     this[this.tableTRIP.RETURN_TIMEColumn] = value;
@@ -4354,14 +4339,9 @@ namespace train2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string DESTINATION {
+            public decimal DESTINATION {
                 get {
-                    try {
-                        return ((string)(this[this.tableTRIP.DESTINATIONColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DESTINATION\' in table \'TRIP\' is DBNull.", e);
-                    }
+                    return ((decimal)(this[this.tableTRIP.DESTINATIONColumn]));
                 }
                 set {
                     this[this.tableTRIP.DESTINATIONColumn] = value;
@@ -4381,78 +4361,13 @@ namespace train2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ARRIVALTIME {
+            public System.DateTime ARRIVALTIME {
                 get {
-                    try {
-                        return ((string)(this[this.tableTRIP.ARRIVALTIMEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ARRIVALTIME\' in table \'TRIP\' is DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tableTRIP.ARRIVALTIMEColumn]));
                 }
                 set {
                     this[this.tableTRIP.ARRIVALTIMEColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsDEPARTDATENull() {
-                return this.IsNull(this.tableTRIP.DEPARTDATEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetDEPARTDATENull() {
-                this[this.tableTRIP.DEPARTDATEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsRETURNDATENull() {
-                return this.IsNull(this.tableTRIP.RETURNDATEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetRETURNDATENull() {
-                this[this.tableTRIP.RETURNDATEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsRETURN_TIMENull() {
-                return this.IsNull(this.tableTRIP.RETURN_TIMEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetRETURN_TIMENull() {
-                this[this.tableTRIP.RETURN_TIMEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsDESTINATIONNull() {
-                return this.IsNull(this.tableTRIP.DESTINATIONColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetDESTINATIONNull() {
-                this[this.tableTRIP.DESTINATIONColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsARRIVALTIMENull() {
-                return this.IsNull(this.tableTRIP.ARRIVALTIMEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetARRIVALTIMENull() {
-                this[this.tableTRIP.ARRIVALTIMEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4976,7 +4891,7 @@ SELECT ADMINID, TRAINANUM, TRIPID, TRA_TRAINANUM, TRI_TRIPID, PASSENGERID, FIRST
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::train2.Properties.Settings.Default.dbConnectionString1;
+            this._connection.ConnectionString = global::train2.Properties.Settings.Default.dbConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5706,7 +5621,7 @@ SELECT BOOKINGNUMBER, TRIPID, TRIPNUMBER, SEATNUMBER, CLASSN, SEATSNUMS, BOOKING
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::train2.Properties.Settings.Default.dbConnectionString1;
+            this._connection.ConnectionString = global::train2.Properties.Settings.Default.dbConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6183,7 +6098,7 @@ SELECT BOOKINGNUMBER, TRIPID, TRIPNUMBER, SEATNUMBER, CLASSN, SEATSNUMS, BOOKING
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::train2.Properties.Settings.Default.dbConnectionString1;
+            this._connection.ConnectionString = global::train2.Properties.Settings.Default.dbConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6499,18 +6414,23 @@ SELECT PASSENGERID, BOOKINGNUMBER, BOO_BOOKINGNUMBER, FIRSTNAME, LASTNAME, EMAIL
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::train2.Properties.Settings.Default.dbConnectionString1;
+            this._connection.ConnectionString = global::train2.Properties.Settings.Default.dbConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT PASSENGERID, BOOKINGNUMBER, BOO_BOOKINGNUMBER, FIRSTNAME, LASTNAME, EMAIL," +
                 " ARIACODE, NUMBER, PASSWORD, GENDER FROM dbo.PASSENGER";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT PASSENGERID, BOOKINGNUMBER, BOO_BOOKINGNUMBER, FIRSTNAME, LASTNAME, EMAIL," +
+                " ARIACODE, NUMBER, PASSWORD, GENDER FROM dbo.PASSENGER";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6535,6 +6455,19 @@ SELECT PASSENGERID, BOOKINGNUMBER, BOO_BOOKINGNUMBER, FIRSTNAME, LASTNAME, EMAIL
             dbDataSet.PASSENGERDataTable dataTable = new dbDataSet.PASSENGERDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(dbDataSet.PASSENGERDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7064,7 +6997,7 @@ SELECT TRIPNUMBER, SEATNUMBER, CLASSN FROM SEAT WHERE (CLASSN = @CLASSN) AND (SE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::train2.Properties.Settings.Default.dbConnectionString1;
+            this._connection.ConnectionString = global::train2.Properties.Settings.Default.dbConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7400,7 +7333,7 @@ SELECT TRAINANUM, TRIPID, MODELTRAIN, TRAINNAME FROM TRAIN WHERE (TRAINANUM = @T
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::train2.Properties.Settings.Default.dbConnectionString1;
+            this._connection.ConnectionString = global::train2.Properties.Settings.Default.dbConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7749,58 +7682,48 @@ SELECT TRAINANUM, TRIPID, MODELTRAIN, TRAINNAME FROM TRAIN WHERE (TRAINANUM = @T
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[TRIP] WHERE (([TRIPID] = @Original_TRIPID) AND ((@IsNull_DEPARTDATE = 1 AND [DEPARTDATE] IS NULL) OR ([DEPARTDATE] = @Original_DEPARTDATE)) AND ((@IsNull_RETURNDATE = 1 AND [RETURNDATE] IS NULL) OR ([RETURNDATE] = @Original_RETURNDATE)) AND ((@IsNull_RETURN_TIME = 1 AND [RETURN_TIME] IS NULL) OR ([RETURN_TIME] = @Original_RETURN_TIME)) AND ([SOURCE] = @Original_SOURCE) AND ((@IsNull_DESTINATION = 1 AND [DESTINATION] IS NULL) OR ([DESTINATION] = @Original_DESTINATION)) AND ([AVAILABLESEAT] = @Original_AVAILABLESEAT) AND ((@IsNull_ARRIVALTIME = 1 AND [ARRIVALTIME] IS NULL) OR ([ARRIVALTIME] = @Original_ARRIVALTIME)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[TRIP] WHERE (([TRIPID] = @Original_TRIPID) AND ([DEPARTDATE] = @Original_DEPARTDATE) AND ([RETURNDATE] = @Original_RETURNDATE) AND ([RETURN_TIME] = @Original_RETURN_TIME) AND ([SOURCE] = @Original_SOURCE) AND ([DESTINATION] = @Original_DESTINATION) AND ([AVAILABLESEAT] = @Original_AVAILABLESEAT) AND ([ARRIVALTIME] = @Original_ARRIVALTIME))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TRIPID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TRIPID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DEPARTDATE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DEPARTDATE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DEPARTDATE", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DEPARTDATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_RETURNDATE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RETURNDATE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RETURNDATE", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RETURNDATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_RETURN_TIME", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RETURN_TIME", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RETURN_TIME", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RETURN_TIME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DEPARTDATE", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DEPARTDATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RETURNDATE", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RETURNDATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RETURN_TIME", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RETURN_TIME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SOURCE", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SOURCE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DESTINATION", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DESTINATION", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DESTINATION", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DESTINATION", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DESTINATION", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "DESTINATION", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AVAILABLESEAT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AVAILABLESEAT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ARRIVALTIME", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ARRIVALTIME", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ARRIVALTIME", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ARRIVALTIME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ARRIVALTIME", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ARRIVALTIME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[TRIP] ([DEPARTDATE], [RETURNDATE], [RETURN_TIME], [SOURCE], [DESTINATION], [AVAILABLESEAT], [ARRIVALTIME]) VALUES (@DEPARTDATE, @RETURNDATE, @RETURN_TIME, @SOURCE, @DESTINATION, @AVAILABLESEAT, @ARRIVALTIME);
 SELECT TRIPID, DEPARTDATE, RETURNDATE, RETURN_TIME, SOURCE, DESTINATION, AVAILABLESEAT, ARRIVALTIME FROM TRIP WHERE (TRIPID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DEPARTDATE", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DEPARTDATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURNDATE", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RETURNDATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_TIME", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RETURN_TIME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DEPARTDATE", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DEPARTDATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURNDATE", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RETURNDATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_TIME", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RETURN_TIME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SOURCE", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SOURCE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DESTINATION", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DESTINATION", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DESTINATION", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "DESTINATION", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AVAILABLESEAT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AVAILABLESEAT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ARRIVALTIME", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ARRIVALTIME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ARRIVALTIME", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ARRIVALTIME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[TRIP] SET [DEPARTDATE] = @DEPARTDATE, [RETURNDATE] = @RETURNDATE, [RETURN_TIME] = @RETURN_TIME, [SOURCE] = @SOURCE, [DESTINATION] = @DESTINATION, [AVAILABLESEAT] = @AVAILABLESEAT, [ARRIVALTIME] = @ARRIVALTIME WHERE (([TRIPID] = @Original_TRIPID) AND ((@IsNull_DEPARTDATE = 1 AND [DEPARTDATE] IS NULL) OR ([DEPARTDATE] = @Original_DEPARTDATE)) AND ((@IsNull_RETURNDATE = 1 AND [RETURNDATE] IS NULL) OR ([RETURNDATE] = @Original_RETURNDATE)) AND ((@IsNull_RETURN_TIME = 1 AND [RETURN_TIME] IS NULL) OR ([RETURN_TIME] = @Original_RETURN_TIME)) AND ([SOURCE] = @Original_SOURCE) AND ((@IsNull_DESTINATION = 1 AND [DESTINATION] IS NULL) OR ([DESTINATION] = @Original_DESTINATION)) AND ([AVAILABLESEAT] = @Original_AVAILABLESEAT) AND ((@IsNull_ARRIVALTIME = 1 AND [ARRIVALTIME] IS NULL) OR ([ARRIVALTIME] = @Original_ARRIVALTIME)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[TRIP] SET [DEPARTDATE] = @DEPARTDATE, [RETURNDATE] = @RETURNDATE, [RETURN_TIME] = @RETURN_TIME, [SOURCE] = @SOURCE, [DESTINATION] = @DESTINATION, [AVAILABLESEAT] = @AVAILABLESEAT, [ARRIVALTIME] = @ARRIVALTIME WHERE (([TRIPID] = @Original_TRIPID) AND ([DEPARTDATE] = @Original_DEPARTDATE) AND ([RETURNDATE] = @Original_RETURNDATE) AND ([RETURN_TIME] = @Original_RETURN_TIME) AND ([SOURCE] = @Original_SOURCE) AND ([DESTINATION] = @Original_DESTINATION) AND ([AVAILABLESEAT] = @Original_AVAILABLESEAT) AND ([ARRIVALTIME] = @Original_ARRIVALTIME));
 SELECT TRIPID, DEPARTDATE, RETURNDATE, RETURN_TIME, SOURCE, DESTINATION, AVAILABLESEAT, ARRIVALTIME FROM TRIP WHERE (TRIPID = @TRIPID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DEPARTDATE", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DEPARTDATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURNDATE", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RETURNDATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_TIME", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RETURN_TIME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DEPARTDATE", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DEPARTDATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURNDATE", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RETURNDATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_TIME", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RETURN_TIME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SOURCE", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SOURCE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DESTINATION", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DESTINATION", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DESTINATION", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "DESTINATION", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AVAILABLESEAT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AVAILABLESEAT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ARRIVALTIME", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ARRIVALTIME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ARRIVALTIME", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ARRIVALTIME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TRIPID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TRIPID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DEPARTDATE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DEPARTDATE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DEPARTDATE", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DEPARTDATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_RETURNDATE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RETURNDATE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RETURNDATE", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RETURNDATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_RETURN_TIME", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RETURN_TIME", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RETURN_TIME", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RETURN_TIME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DEPARTDATE", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DEPARTDATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RETURNDATE", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RETURNDATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RETURN_TIME", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RETURN_TIME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SOURCE", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SOURCE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DESTINATION", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DESTINATION", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DESTINATION", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DESTINATION", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DESTINATION", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "DESTINATION", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AVAILABLESEAT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AVAILABLESEAT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ARRIVALTIME", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ARRIVALTIME", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ARRIVALTIME", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ARRIVALTIME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ARRIVALTIME", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ARRIVALTIME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TRIPID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TRIPID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -7808,7 +7731,7 @@ SELECT TRIPID, DEPARTDATE, RETURNDATE, RETURN_TIME, SOURCE, DESTINATION, AVAILAB
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::train2.Properties.Settings.Default.dbConnectionString1;
+            this._connection.ConnectionString = global::train2.Properties.Settings.Default.dbConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7879,55 +7802,20 @@ SELECT TRIPID, DEPARTDATE, RETURNDATE, RETURN_TIME, SOURCE, DESTINATION, AVAILAB
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_TRIPID, string Original_DEPARTDATE, string Original_RETURNDATE, string Original_RETURN_TIME, string Original_SOURCE, string Original_DESTINATION, int Original_AVAILABLESEAT, string Original_ARRIVALTIME) {
+        public virtual int Delete(int Original_TRIPID, System.DateTime Original_DEPARTDATE, System.DateTime Original_RETURNDATE, System.DateTime Original_RETURN_TIME, string Original_SOURCE, decimal Original_DESTINATION, int Original_AVAILABLESEAT, System.DateTime Original_ARRIVALTIME) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_TRIPID));
-            if ((Original_DEPARTDATE == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_DEPARTDATE));
-            }
-            if ((Original_RETURNDATE == null)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_RETURNDATE));
-            }
-            if ((Original_RETURN_TIME == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_RETURN_TIME));
-            }
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((System.DateTime)(Original_DEPARTDATE));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_RETURNDATE));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_RETURN_TIME));
             if ((Original_SOURCE == null)) {
                 throw new global::System.ArgumentNullException("Original_SOURCE");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_SOURCE));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_SOURCE));
             }
-            if ((Original_DESTINATION == null)) {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_DESTINATION));
-            }
-            this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_AVAILABLESEAT));
-            if ((Original_ARRIVALTIME == null)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_ARRIVALTIME));
-            }
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((decimal)(Original_DESTINATION));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_AVAILABLESEAT));
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((System.DateTime)(Original_ARRIVALTIME));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7948,44 +7836,19 @@ SELECT TRIPID, DEPARTDATE, RETURNDATE, RETURN_TIME, SOURCE, DESTINATION, AVAILAB
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string DEPARTDATE, string RETURNDATE, string RETURN_TIME, string SOURCE, string DESTINATION, int AVAILABLESEAT, string ARRIVALTIME) {
-            if ((DEPARTDATE == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(DEPARTDATE));
-            }
-            if ((RETURNDATE == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(RETURNDATE));
-            }
-            if ((RETURN_TIME == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(RETURN_TIME));
-            }
+        public virtual int Insert(System.DateTime DEPARTDATE, System.DateTime RETURNDATE, System.DateTime RETURN_TIME, string SOURCE, decimal DESTINATION, int AVAILABLESEAT, System.DateTime ARRIVALTIME) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(DEPARTDATE));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(RETURNDATE));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(RETURN_TIME));
             if ((SOURCE == null)) {
                 throw new global::System.ArgumentNullException("SOURCE");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(SOURCE));
             }
-            if ((DESTINATION == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(DESTINATION));
-            }
+            this.Adapter.InsertCommand.Parameters[4].Value = ((decimal)(DESTINATION));
             this.Adapter.InsertCommand.Parameters[5].Value = ((int)(AVAILABLESEAT));
-            if ((ARRIVALTIME == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(ARRIVALTIME));
-            }
+            this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(ARRIVALTIME));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8007,108 +7870,48 @@ SELECT TRIPID, DEPARTDATE, RETURNDATE, RETURN_TIME, SOURCE, DESTINATION, AVAILAB
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    string DEPARTDATE, 
-                    string RETURNDATE, 
-                    string RETURN_TIME, 
+                    System.DateTime DEPARTDATE, 
+                    System.DateTime RETURNDATE, 
+                    System.DateTime RETURN_TIME, 
                     string SOURCE, 
-                    string DESTINATION, 
+                    decimal DESTINATION, 
                     int AVAILABLESEAT, 
-                    string ARRIVALTIME, 
+                    System.DateTime ARRIVALTIME, 
                     int Original_TRIPID, 
-                    string Original_DEPARTDATE, 
-                    string Original_RETURNDATE, 
-                    string Original_RETURN_TIME, 
+                    System.DateTime Original_DEPARTDATE, 
+                    System.DateTime Original_RETURNDATE, 
+                    System.DateTime Original_RETURN_TIME, 
                     string Original_SOURCE, 
-                    string Original_DESTINATION, 
+                    decimal Original_DESTINATION, 
                     int Original_AVAILABLESEAT, 
-                    string Original_ARRIVALTIME, 
+                    System.DateTime Original_ARRIVALTIME, 
                     int TRIPID) {
-            if ((DEPARTDATE == null)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(DEPARTDATE));
-            }
-            if ((RETURNDATE == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(RETURNDATE));
-            }
-            if ((RETURN_TIME == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(RETURN_TIME));
-            }
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(DEPARTDATE));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(RETURNDATE));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(RETURN_TIME));
             if ((SOURCE == null)) {
                 throw new global::System.ArgumentNullException("SOURCE");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(SOURCE));
             }
-            if ((DESTINATION == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(DESTINATION));
-            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(DESTINATION));
             this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(AVAILABLESEAT));
-            if ((ARRIVALTIME == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(ARRIVALTIME));
-            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(ARRIVALTIME));
             this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_TRIPID));
-            if ((Original_DEPARTDATE == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_DEPARTDATE));
-            }
-            if ((Original_RETURNDATE == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_RETURNDATE));
-            }
-            if ((Original_RETURN_TIME == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_RETURN_TIME));
-            }
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_DEPARTDATE));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_RETURNDATE));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_RETURN_TIME));
             if ((Original_SOURCE == null)) {
                 throw new global::System.ArgumentNullException("Original_SOURCE");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_SOURCE));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_SOURCE));
             }
-            if ((Original_DESTINATION == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_DESTINATION));
-            }
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_AVAILABLESEAT));
-            if ((Original_ARRIVALTIME == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_ARRIVALTIME));
-            }
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(TRIPID));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((decimal)(Original_DESTINATION));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_AVAILABLESEAT));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_ARRIVALTIME));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(TRIPID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8129,7 +7932,7 @@ SELECT TRIPID, DEPARTDATE, RETURNDATE, RETURN_TIME, SOURCE, DESTINATION, AVAILAB
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string DEPARTDATE, string RETURNDATE, string RETURN_TIME, string SOURCE, string DESTINATION, int AVAILABLESEAT, string ARRIVALTIME, int Original_TRIPID, string Original_DEPARTDATE, string Original_RETURNDATE, string Original_RETURN_TIME, string Original_SOURCE, string Original_DESTINATION, int Original_AVAILABLESEAT, string Original_ARRIVALTIME) {
+        public virtual int Update(System.DateTime DEPARTDATE, System.DateTime RETURNDATE, System.DateTime RETURN_TIME, string SOURCE, decimal DESTINATION, int AVAILABLESEAT, System.DateTime ARRIVALTIME, int Original_TRIPID, System.DateTime Original_DEPARTDATE, System.DateTime Original_RETURNDATE, System.DateTime Original_RETURN_TIME, string Original_SOURCE, decimal Original_DESTINATION, int Original_AVAILABLESEAT, System.DateTime Original_ARRIVALTIME) {
             return this.Update(DEPARTDATE, RETURNDATE, RETURN_TIME, SOURCE, DESTINATION, AVAILABLESEAT, ARRIVALTIME, Original_TRIPID, Original_DEPARTDATE, Original_RETURNDATE, Original_RETURN_TIME, Original_SOURCE, Original_DESTINATION, Original_AVAILABLESEAT, Original_ARRIVALTIME, Original_TRIPID);
         }
     }

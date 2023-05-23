@@ -62,7 +62,7 @@ namespace train2
             Form1 form = new Form1();
             try
             {
-                using (SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=db;Integrated Security=True"))
+                using (SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-KRRE5CF7\SQLEXPRESS;Initial Catalog=db;Integrated Security=True"))
                 {
                     conn.Open();
                     string updateQuery = "UPDATE ADMIN SET FIRSTNAME = @FirstName, LASTNAME=@LastName," +
@@ -79,6 +79,10 @@ namespace train2
                         updateCommand.Parameters.AddWithValue("@Gender", gender);
                         updateCommand.Parameters.AddWithValue("@CurrentEmaill", currentEmaill);
                         int rowsAffected = updateCommand.ExecuteNonQuery();
+                        dataGridView1.Refresh();
+
+                        // Update the control to redraw the cells with the updated data
+                        dataGridView1.Update();
                         // Check the number of rows affected
                         if (rowsAffected > 0)
                         {
@@ -142,7 +146,7 @@ namespace train2
             Form1 form = new Form1();
             try
             {
-                using (SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=db;Integrated Security=True"))
+                using (SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-KRRE5CF7\SQLEXPRESS;Initial Catalog=db;Integrated Security=True"))
                 {
                     conn.Open();
                     string deletequery = "DELETE FROM ADMIN WHERE EMAIL=@Email";

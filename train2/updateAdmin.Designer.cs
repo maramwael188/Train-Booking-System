@@ -30,17 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.aDMINIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fIRSTNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lASTNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pASSWORDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aREACODEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nUMBERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gENDERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aDMINBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dbDataSet = new train2.dbDataSet();
             this.tbPass = new System.Windows.Forms.TextBox();
             this.tbAreaCode = new System.Windows.Forms.TextBox();
             this.tbPhoneNumber = new System.Windows.Forms.TextBox();
@@ -57,21 +46,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.aDMINTableAdapter = new train2.dbDataSetTableAdapters.ADMINTableAdapter();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnAddTrain = new System.Windows.Forms.Button();
+            this.aDMINBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbDataSet = new train2.dbDataSet();
+            this.aDMINTableAdapter = new train2.dbDataSetTableAdapters.ADMINTableAdapter();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aDMINBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.tbPass);
             this.panel1.Controls.Add(this.tbAreaCode);
             this.panel1.Controls.Add(this.tbPhoneNumber);
@@ -93,103 +82,6 @@
             this.panel1.Size = new System.Drawing.Size(819, 640);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.aDMINIDDataGridViewTextBoxColumn,
-            this.fIRSTNAMEDataGridViewTextBoxColumn,
-            this.lASTNAMEDataGridViewTextBoxColumn,
-            this.eMAILDataGridViewTextBoxColumn,
-            this.pASSWORDDataGridViewTextBoxColumn,
-            this.aREACODEDataGridViewTextBoxColumn,
-            this.nUMBERDataGridViewTextBoxColumn,
-            this.gENDERDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.aDMINBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(131, 371);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(499, 187);
-            this.dataGridView1.TabIndex = 46;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // aDMINIDDataGridViewTextBoxColumn
-            // 
-            this.aDMINIDDataGridViewTextBoxColumn.DataPropertyName = "ADMINID";
-            this.aDMINIDDataGridViewTextBoxColumn.HeaderText = "ADMINID";
-            this.aDMINIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.aDMINIDDataGridViewTextBoxColumn.Name = "aDMINIDDataGridViewTextBoxColumn";
-            this.aDMINIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.aDMINIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // fIRSTNAMEDataGridViewTextBoxColumn
-            // 
-            this.fIRSTNAMEDataGridViewTextBoxColumn.DataPropertyName = "FIRSTNAME";
-            this.fIRSTNAMEDataGridViewTextBoxColumn.HeaderText = "FIRSTNAME";
-            this.fIRSTNAMEDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.fIRSTNAMEDataGridViewTextBoxColumn.Name = "fIRSTNAMEDataGridViewTextBoxColumn";
-            this.fIRSTNAMEDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // lASTNAMEDataGridViewTextBoxColumn
-            // 
-            this.lASTNAMEDataGridViewTextBoxColumn.DataPropertyName = "LASTNAME";
-            this.lASTNAMEDataGridViewTextBoxColumn.HeaderText = "LASTNAME";
-            this.lASTNAMEDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.lASTNAMEDataGridViewTextBoxColumn.Name = "lASTNAMEDataGridViewTextBoxColumn";
-            this.lASTNAMEDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // eMAILDataGridViewTextBoxColumn
-            // 
-            this.eMAILDataGridViewTextBoxColumn.DataPropertyName = "EMAIL";
-            this.eMAILDataGridViewTextBoxColumn.HeaderText = "EMAIL";
-            this.eMAILDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.eMAILDataGridViewTextBoxColumn.Name = "eMAILDataGridViewTextBoxColumn";
-            this.eMAILDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // pASSWORDDataGridViewTextBoxColumn
-            // 
-            this.pASSWORDDataGridViewTextBoxColumn.DataPropertyName = "PASSWORD";
-            this.pASSWORDDataGridViewTextBoxColumn.HeaderText = "PASSWORD";
-            this.pASSWORDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.pASSWORDDataGridViewTextBoxColumn.Name = "pASSWORDDataGridViewTextBoxColumn";
-            this.pASSWORDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // aREACODEDataGridViewTextBoxColumn
-            // 
-            this.aREACODEDataGridViewTextBoxColumn.DataPropertyName = "AREACODE";
-            this.aREACODEDataGridViewTextBoxColumn.HeaderText = "AREACODE";
-            this.aREACODEDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.aREACODEDataGridViewTextBoxColumn.Name = "aREACODEDataGridViewTextBoxColumn";
-            this.aREACODEDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // nUMBERDataGridViewTextBoxColumn
-            // 
-            this.nUMBERDataGridViewTextBoxColumn.DataPropertyName = "NUMBER";
-            this.nUMBERDataGridViewTextBoxColumn.HeaderText = "NUMBER";
-            this.nUMBERDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nUMBERDataGridViewTextBoxColumn.Name = "nUMBERDataGridViewTextBoxColumn";
-            this.nUMBERDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // gENDERDataGridViewTextBoxColumn
-            // 
-            this.gENDERDataGridViewTextBoxColumn.DataPropertyName = "GENDER";
-            this.gENDERDataGridViewTextBoxColumn.HeaderText = "GENDER";
-            this.gENDERDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.gENDERDataGridViewTextBoxColumn.Name = "gENDERDataGridViewTextBoxColumn";
-            this.gENDERDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // aDMINBindingSource
-            // 
-            this.aDMINBindingSource.DataMember = "ADMIN";
-            this.aDMINBindingSource.DataSource = this.dbDataSet;
-            // 
-            // dbDataSet
-            // 
-            this.dbDataSet.DataSetName = "dbDataSet";
-            this.dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tbPass
             // 
@@ -385,10 +277,6 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // aDMINTableAdapter
-            // 
-            this.aDMINTableAdapter.ClearBeforeFill = true;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -427,6 +315,20 @@
             this.btnAddTrain.UseVisualStyleBackColor = true;
             this.btnAddTrain.Click += new System.EventHandler(this.button2_Click);
             // 
+            // aDMINBindingSource
+            // 
+            this.aDMINBindingSource.DataMember = "ADMIN";
+            this.aDMINBindingSource.DataSource = this.dbDataSet;
+            // 
+            // dbDataSet
+            // 
+            this.dbDataSet.DataSetName = "dbDataSet";
+            this.dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // aDMINTableAdapter
+            // 
+            this.aDMINTableAdapter.ClearBeforeFill = true;
+            // 
             // updateAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -442,10 +344,9 @@
             this.Load += new System.EventHandler(this.updateAdmin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.aDMINBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -469,18 +370,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private dbDataSet dbDataSet;
         private System.Windows.Forms.BindingSource aDMINBindingSource;
         private dbDataSetTableAdapters.ADMINTableAdapter aDMINTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aDMINIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fIRSTNAMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lASTNAMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eMAILDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pASSWORDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aREACODEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nUMBERDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gENDERDataGridViewTextBoxColumn;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnAddTrain;
         private System.Windows.Forms.Button btnLogOut;
