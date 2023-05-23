@@ -12,17 +12,21 @@ C:\Users\20109\source\repos\train2\obj\Debug\train2.pdb
 C:\Users\20109\source\repos\train2\obj\Debug\TrainBookingSystemC.SignUpForm.resources
 C:\Users\20109\source\repos\train2\obj\Debug\train2.updateAdmin.resources
 C:\Users\20109\source\repos\train2\obj\Debug\train2.updatePassenger.resources
-D:\fcai\Second Year\second semister\Database\DBprojects\Train\gitTrain\train2\bin\Debug\train2.exe.config
-D:\fcai\Second Year\second semister\Database\DBprojects\Train\gitTrain\train2\bin\Debug\train2.exe
-D:\fcai\Second Year\second semister\Database\DBprojects\Train\gitTrain\train2\bin\Debug\train2.pdb
-D:\fcai\Second Year\second semister\Database\DBprojects\Train\gitTrain\train2\obj\Debug\train2.csproj.AssemblyReference.cache
-D:\fcai\Second Year\second semister\Database\DBprojects\Train\gitTrain\train2\obj\Debug\train2.csproj.SuggestedBindingRedirects.cache
-D:\fcai\Second Year\second semister\Database\DBprojects\Train\gitTrain\train2\obj\Debug\train2.Form1.resources
-D:\fcai\Second Year\second semister\Database\DBprojects\Train\gitTrain\train2\obj\Debug\train2.Properties.Resources.resources
-D:\fcai\Second Year\second semister\Database\DBprojects\Train\gitTrain\train2\obj\Debug\train2.updateAdmin.resources
-D:\fcai\Second Year\second semister\Database\DBprojects\Train\gitTrain\train2\obj\Debug\train2.updatePassenger.resources
-D:\fcai\Second Year\second semister\Database\DBprojects\Train\gitTrain\train2\obj\Debug\train2.csproj.GenerateResource.cache
-D:\fcai\Second Year\second semister\Database\DBprojects\Train\gitTrain\train2\obj\Debug\train2.csproj.CoreCompileInputs.cache
-D:\fcai\Second Year\second semister\Database\DBprojects\Train\gitTrain\train2\obj\Debug\train2.exe
-D:\fcai\Second Year\second semister\Database\DBprojects\Train\gitTrain\train2\obj\Debug\train2.pdb
-D:\fcai\Second Year\second semister\Database\DBprojects\Train\gitTrain\train2\obj\Debug\train2.SignUpForm.resources
+C:\Users\20109\source\repos\train2\obj\Debug\train2.AdminPage.resources
+C:\Users\20109\source\repos\train2\obj\Debug\train2.Booking.resources
+C:\Users\youse\Desktop\train2\bin\Debug\train2.exe.config
+C:\Users\youse\Desktop\train2\bin\Debug\train2.exe
+C:\Users\youse\Desktop\train2\bin\Debug\train2.pdb
+C:\Users\youse\Desktop\train2\obj\Debug\train2.csproj.AssemblyReference.cache
+C:\Users\youse\Desktop\train2\obj\Debug\train2.csproj.SuggestedBindingRedirects.cache
+C:\Users\youse\Desktop\train2\obj\Debug\train2.AdminPage.resources
+C:\Users\youse\Desktop\train2\obj\Debug\train2.Booking.resources
+C:\Users\youse\Desktop\train2\obj\Debug\TrainBookingSystemC.SignUpForm.resources
+C:\Users\youse\Desktop\train2\obj\Debug\train2.Form1.resources
+C:\Users\youse\Desktop\train2\obj\Debug\train2.Properties.Resources.resources
+C:\Users\youse\Desktop\train2\obj\Debug\train2.updateAdmin.resources
+C:\Users\youse\Desktop\train2\obj\Debug\train2.updatePassenger.resources
+C:\Users\youse\Desktop\train2\obj\Debug\train2.csproj.GenerateResource.cache
+C:\Users\youse\Desktop\train2\obj\Debug\train2.csproj.CoreCompileInputs.cache
+C:\Users\youse\Desktop\train2\obj\Debug\train2.exe
+C:\Users\youse\Desktop\train2\obj\Debug\train2.pdb

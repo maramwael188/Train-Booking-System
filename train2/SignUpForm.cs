@@ -8,30 +8,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using train2;
 
-namespace train2
+namespace TrainBookingSystemC
 {
     public partial class SignUpForm : Form
     {
         public SignUpForm()
         {
             InitializeComponent();
-            label1.BackColor = Color.FromArgb(10, 0, 0, 0);
-            label3.BackColor = Color.FromArgb(100, 0, 0, 0);
-            label4.BackColor = Color.FromArgb(100, 0, 0, 0);
-            label5.BackColor = Color.FromArgb(100, 0, 0, 0);
-            label6.BackColor = Color.FromArgb(100, 0, 0, 0);
-            label7.BackColor = Color.FromArgb(100, 0, 0, 0);
-            label8.BackColor = Color.FromArgb(100, 0, 0, 0);
-
-
-
-
+            //this.BackColor = Color.Transparent;
+            //this.TransparencyKey = Color.Transparent;
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            label1.BackColor = Color.FromArgb(100, 0, 0, 0);
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -46,6 +38,7 @@ namespace train2
 
         private void button2_Click(object sender, EventArgs e)
         {
+            button2.BackColor = Color.FromArgb(100, 0, 0, 0);
             tbFname.Clear();
             tbLname.Clear();
             tbEmail.Clear();
@@ -128,6 +121,7 @@ namespace train2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            button1.BackColor = Color.FromArgb(100, 0, 0, 0);
             string firstName = tbFname.Text;
             string lastName = tbLname.Text;
             string email = tbEmail.Text;
@@ -138,7 +132,7 @@ namespace train2
 
             try
             {
-                using (SqlConnection conn = new SqlConnection(@"Data Source=MEDO;Initial Catalog=TrainBooking;Integrated Security=True"))
+                using (SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=db;Integrated Security=True"))
                 {
                     conn.Open();
 
@@ -202,15 +196,26 @@ namespace train2
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+       
+
+        private void button4_Click(object sender, EventArgs e)
         {
-            Form1 LogIn = new Form1();
-            LogIn.ShowDialog();
-            this.Hide();
+            DialogResult res;
+            res = MessageBox.Show("Do you want to exit", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                this.Show();
+            }
+            this.Close();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            button5.BackColor = Color.FromArgb(100, 0, 0, 0);
             string firstName = tbFname.Text;
             string lastName = tbLname.Text;
             string email = tbEmail.Text;
@@ -221,7 +226,7 @@ namespace train2
 
             try
             {
-                using (SqlConnection conn = new SqlConnection(@"Data Source=MEDO;Initial Catalog=TrainBooking;Integrated Security=True"))
+                using (SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=db;Integrated Security=True"))
                 {
                     conn.Open();
 
@@ -287,7 +292,6 @@ namespace train2
         private void button4_Click_1(object sender, EventArgs e)
         {
             button4.BackColor = Color.FromArgb(100, 0, 0, 0);
-
             DialogResult res;
             res = MessageBox.Show("Do you want to exit", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (res == DialogResult.Yes)
@@ -306,23 +310,35 @@ namespace train2
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void SignUpForm_Load(object sender, EventArgs e)
         {
-            button1.BackColor = Color.FromArgb(100, 0, 0, 0);
-            panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
+            
+        }
 
+        private void tbFname_TextChanged_1(object sender, EventArgs e)
+        {
 
         }
 
-        private void SignUpForm_Load(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
+            panel1.BackColor = Color.FromArgb(150, 0, 0, 0);
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
             panel2.BackColor = Color.FromArgb(100, 0, 0, 0);
+        }
 
+        private void btnlogin_Click(object sender, EventArgs e)
+        {
+            btnlogin.BackColor = Color.FromArgb(100, 0, 0, 0);
+            this.Controls.Clear();
+            Form1 Form = new Form1();
+            Form.TopLevel = false;
+            Form.FormBorderStyle = FormBorderStyle.None;
+            this.Controls.Add(Form);
+            Form.Show();
         }
     }
 }

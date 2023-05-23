@@ -50,7 +50,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(214, 629);
+            this.panel1.Size = new System.Drawing.Size(244, 629);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -61,12 +61,12 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Image = global::train2.Properties.Resources.add_user__1_;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(9, 409);
+            this.button1.Location = new System.Drawing.Point(10, 409);
             this.button1.Margin = new System.Windows.Forms.Padding(1);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(181, 40);
+            this.button1.Size = new System.Drawing.Size(207, 40);
             this.button1.TabIndex = 0;
             this.button1.Text = "Sign Up";
             this.button1.UseVisualStyleBackColor = true;
@@ -82,9 +82,9 @@
             this.panel2.Controls.Add(this.tbEmail);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(202, 0);
+            this.panel2.Location = new System.Drawing.Point(231, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(710, 629);
+            this.panel2.Size = new System.Drawing.Size(811, 629);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -96,10 +96,10 @@
             this.btnExit.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(485, 379);
+            this.btnExit.Location = new System.Drawing.Point(554, 379);
             this.btnExit.Margin = new System.Windows.Forms.Padding(1);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(181, 40);
+            this.btnExit.Size = new System.Drawing.Size(207, 40);
             this.btnExit.TabIndex = 6;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -113,10 +113,10 @@
             this.btnClear.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClear.Location = new System.Drawing.Point(277, 379);
+            this.btnClear.Location = new System.Drawing.Point(317, 379);
             this.btnClear.Margin = new System.Windows.Forms.Padding(1);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(181, 40);
+            this.btnClear.Size = new System.Drawing.Size(207, 40);
             this.btnClear.TabIndex = 5;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -130,10 +130,10 @@
             this.btLogin.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btLogin.Location = new System.Drawing.Point(63, 379);
+            this.btLogin.Location = new System.Drawing.Point(72, 379);
             this.btLogin.Margin = new System.Windows.Forms.Padding(1);
             this.btLogin.Name = "btLogin";
-            this.btLogin.Size = new System.Drawing.Size(181, 40);
+            this.btLogin.Size = new System.Drawing.Size(207, 40);
             this.btLogin.TabIndex = 1;
             this.btLogin.Text = "Log In";
             this.btLogin.UseVisualStyleBackColor = true;
@@ -145,9 +145,9 @@
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Location = new System.Drawing.Point(57, 253);
+            this.label3.Location = new System.Drawing.Point(65, 253);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 37);
+            this.label3.Size = new System.Drawing.Size(152, 37);
             this.label3.TabIndex = 4;
             this.label3.Text = "Passwordl";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -157,10 +157,10 @@
             this.tbPassword.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.tbPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbPassword.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPassword.Location = new System.Drawing.Point(195, 253);
+            this.tbPassword.Location = new System.Drawing.Point(223, 253);
             this.tbPassword.Multiline = true;
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(319, 36);
+            this.tbPassword.Size = new System.Drawing.Size(364, 36);
             this.tbPassword.TabIndex = 3;
             // 
             // tbEmail
@@ -168,10 +168,10 @@
             this.tbEmail.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.tbEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbEmail.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEmail.Location = new System.Drawing.Point(195, 172);
+            this.tbEmail.Location = new System.Drawing.Point(223, 172);
             this.tbEmail.Multiline = true;
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(319, 36);
+            this.tbEmail.Size = new System.Drawing.Size(364, 36);
             this.tbEmail.TabIndex = 2;
             this.tbEmail.TextChanged += new System.EventHandler(this.tbEmail_TextChanged);
             // 
@@ -181,9 +181,9 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(92, 171);
+            this.label2.Location = new System.Drawing.Point(105, 171);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 37);
+            this.label2.Size = new System.Drawing.Size(100, 37);
             this.label2.TabIndex = 1;
             this.label2.Text = "Email";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -193,9 +193,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkRed;
-            this.label1.Location = new System.Drawing.Point(220, 59);
+            this.label1.Location = new System.Drawing.Point(252, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(276, 63);
+            this.label1.Size = new System.Drawing.Size(315, 63);
             this.label1.TabIndex = 0;
             this.label1.Text = "Log In";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -203,7 +203,7 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
@@ -211,7 +211,7 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BackgroundImage = global::train2.Properties.Resources.tt;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(912, 629);
+            this.ClientSize = new System.Drawing.Size(1042, 629);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

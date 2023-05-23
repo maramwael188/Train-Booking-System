@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using train2;
+using TrainBookingSystemC;
 
 namespace train2
 {
@@ -19,7 +19,7 @@ namespace train2
         public Form1()
         {
             InitializeComponent();
-            conn = new SqlConnection(@"Data Source=MEDO;Initial Catalog=TrainBooking;Integrated Security=True");
+            conn = new SqlConnection(@"Data Source=.;Initial Catalog=db;Integrated Security=True");
         }
 
         //private void reg_btn_Click(object sender, EventArgs e)
@@ -76,13 +76,15 @@ namespace train2
                         MessageBox.Show("Passenger Logged in successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         // navigate to the next screen : booking or whatever
                         this.Controls.Clear();
-                        updatePassenger update = new updatePassenger();
-                        update.currentEmail = tbEmail.Text;
-                        update.currentPassw = tbPassword.Text;
-                        update.TopLevel = false;
+                        Booking booking = new Booking();
+
+                        //updatePassenger update = new updatePassenger();
+                        booking.currentEmail = tbEmail.Text;
+                        //booking.currentPassw = tbPassword.Text;
+                        booking.TopLevel = false;
                         //general page should be here
-                        this.Controls.Add(update);
-                        update.Show();
+                        this.Controls.Add(booking);
+                        booking.Show();
 
                     }
                     else
